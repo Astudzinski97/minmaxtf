@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess AI</title>
+
+    <!-- jQuery -->
+    <script src="src/jquery-3.6.0.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="/src/popper.min.js"></script>
+    <script src="/src/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/src/bootstrap.min.css">
+
+    <!-- Tensorflow.js -->
+    <script src="src/tf.min.js"></script>
+
+    <!-- chess.js -->
+    <script defer src="/src/chess.js"></script>
+
+    <!-- chessboard.js -->
+    <link rel="stylesheet" href="/src/chessboard-1.0.0.min.css">
+    <script defer src="/src/chessboard-1.0.0.min.js"></script>
+
+    <!-- Fens file-->
+    <script defer src="src/fens.js"></script>
+
+    <!-- Minmax script and learning model -->
+    <script defer src="/src/app.js"></script>
+
+</head>
+<body style="background-color: midnightblue;">
+
+  <br />
+
+  <div class="container jumbotron">
+    <div class="row">
+      <div class="col-7">
+        <div id="board" style="width: 90%;"></div>
+      </div>
+      <div class="col-5">
+        <label style="font-weight: bold;">Status:</label>
+        <div id="status"></div>
+        <label style="font-weight: bold;">FEN:</label>
+        <div id="fen"></div>
+        <label style="font-weight: bold;">PGN:</label>
+        <div id="pgn"></div>
+        <label style="font-weight: bold;">Computer evaluation:</label>
+        <div id="eval"></div>
+        <label style="font-weight: bold;">Current promotion:</label>
+        <p id="prom"></p>
+
+        <button type="button" class="btn btn-primary" onclick="promoQ()">Queen</button>
+        <button type="button" class="btn btn-primary" onclick="promoR()">Rook</button>
+        <button type="button" class="btn btn-primary" onclick="promoB()">Bishop</button>
+        <button type="button" class="btn btn-primary" onclick="promoN()">Knight</button>
+
+        <br />
+        <br />
+
+        <button type="button" class="btn btn-info" onclick="resetState()">Reset</button>
+
+        <br />
+        <br />
+
+        <button type="button" class="btn btn-warning" onclick="buildModel()">Build & Train Model</button><p id="model-p"></p>
+
+        <button type="button" class="btn btn-light" onclick="asWhite()">Play as White</button>
+        <button type="button" class="btn btn-dark" onclick="asBlack()">Play as Black</button>
+        <button type="button" class="btn btn-warning" onclick="compVsComp()">Computer vs Computer</button>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
+
